@@ -1,0 +1,15 @@
+[submodule "prjxray"]
+	path = prjxray
+	url = https://github.com/byuccl/prjxray.git
+[submodule "tincr"]
+	path = tincr
+	url = https://github.com/byuccl/tincr.git
+[submodule "RapidSmith2"]
+	path = RapidSmith2
+	url = https://github.com/byuccl/RapidSmith2.git
+[submodule "yosys"]
+	path = yosys
+	url = https://github.com/YosysHQ/yosys.git
+[submodule "rs-cad"]
+	path = rs-cad
+	url = https://github.com/byuccl/rs-cad.git

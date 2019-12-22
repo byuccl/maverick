@@ -1,0 +1,30 @@
+MACROS_XML = src/macros.xml
+PLACEMENT_RSC = src/placement.rsc
+STATIC_RSC = src/static_resources.rsc
+
+yosys_edif:
+	@mkdir -p $(NAME).rscp
+	@touch $(NAME).rscp/constraints.xdc
+	@echo -e "part=$(PART)\nmode=$(MODE)" > $(NAME).rscp/design.info
+ifneq ("$(wildcard $(MACROS_XML))","")
+	@cp $(MACROS_XML) $(NAME).rscp/
+else
+	@echo -e "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<root>\n  <macros>\n  </macros>\n</root>" > $(NAME).rscp/macros.xml
+endif
+ifneq ("$(wildcard $(PLACEMENT_RSC))","")
+	@cp $(PLACEMENT_RSC) $(NAME).rscp/
+else
+	@touch $(NAME).rscp/placement.rsc
+endif
+ifneq ("$(wildcard $(STATIC_RSC))","")
+	@cp $(STATIC_RSC) $(NAME).rscp/
+else
+	@touch $(NAME).rscp/static_resources.rsc
+endif    
+	@touch $(NAME).rscp/routing.rsc
+	@echo "Synthesizing with Yosys..."
+	@export YOSYS_SOURCE_PATH=src; export NAME=$(NAME); export SV=$(SV); export TOP=$(TOP); yosys -q $(LEVEL)/yosys.tcl
+	@echo "Done! RSCP written"    
+
+clean:
+	rm *.edf *.blif

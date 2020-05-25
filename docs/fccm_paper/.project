@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>PynqPRPaper</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.texlipse.builder.TexlipseBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>net.sourceforge.texlipse.builder.TexlipseBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.texlipse.builder.TexlipseNature</nature>
+		<nature>net.sourceforge.texlipse.builder.TexlipseNature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>IEEEabrv.bib</name>
+			<type>1</type>
+			<location>/usr/local/texlive/2018/texmf-dist/bibtex/bib/IEEEtran/IEEEabrv.bib</location>
+		</link>
+	</linkedResources>
+</projectDescription>

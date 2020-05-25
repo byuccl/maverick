@@ -1,0 +1,7 @@
+\begin{abstract}
+This paper presents Maverick, a proof-of-concept computer-aided design (CAD) flow for generating reconfigurable modules (RMs) which target partial reconfiguration (PR) regions in field-programmable gate array (FPGA) designs.
+After an initial static design and PR region are created with Xilinx's Vivado PR flow, the Maverick flow can then compile and configure RMs onto that PR region---without the use of vendor tools. 
+Maverick builds upon existing open source tools (Yosys, RapidSmith2, and Project X-Ray) to form an end-to-end compilation flow.
+This paper describes the Maverick flow and shows the results of it running on a PYNQ-Z1's ARM processor to compile a set of HDL designs to partial bitstreams.
+The resulting bitstreams were configured onto the PYNQ-Z1's FPGA fabric, demonstrating the feasibility of a single-chip embedded system which can both compile HDL designs to bitstreams and then configure them onto its own programmable fabric.
+\end{abstract}

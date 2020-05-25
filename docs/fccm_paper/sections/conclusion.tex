@@ -1,0 +1,22 @@
+\section{Conclusion and Future Work}
+\label{sec:conclusion}
+
+In this paper, we have presented the Maverick flow---a stand-alone CAD flow for RMs.
+We demonstrated this by executing it on the PYNQ-Z1's ARM processor to compile a collection of Verilog designs to partial bitstreams.
+These resulting bitstreams were all configured and verified in hardware on the PYNQ-Z1's FPGA fabric, demonstrating the feasibility of a single-chip system that can both compile HDL designs to bitstreams and then configure them onto its own programmable fabric.
+
+Maverick uses a number of existing open source tools including Yosys, RapidSmith2, and Project X-Ray.  
+We significantly modified some of these tools.
+In particular, the existing RapidSmith2 import, packer, placer, and device model generation tools were all heavily modified to support PR, as was VDI.
+Additionally, the Project X-Ray xc7Patch program was modified to create xc7PartialPatch, which functions with partial bitstreams.
+New tools were also created as a part of this work, including a RapidSmith2-based router and a RapidSmith2 FASM file generator.
+Other software was also created to interface the various pieces of Maverick to one another, creating a turnkey system.
+
+We see several potential future opportunities for Maverick.
+Firstly, we are preparing it for open source distribution so it can be used and extended by others in the community.
+Maverick could also be enhanced to work with other Xilinx architectures beyond 7-Series, such as the Zynq UltraScale+.
+There is nothing in the tools comprising Maverick which would prevent them from doing so.
+In fact, several of these already have support for devices beyond 7-Series.
+Another extension to Maverick would be to support multiple PR regions within the same device, a modest change to the existing system.
+Maverick could also be updated to support additional primitives in 7-Series devices as Yosys and Project X-Ray expand their supported set.
+Furthermore, we plan on exploring the use of Maverick in an educational setting to teach digital design, providing instructional materials, CAD tools, analysis and visualization tools, and a hardware platform in one PYNQ system.

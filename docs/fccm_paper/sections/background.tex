@@ -1,0 +1,27 @@
+\section{Related Work}
+\label{sec:background}
+
+The Maverick flow is a 3rd party CAD tool flow which targets commercial FPGA devices.
+A number of other research projects have also produced tools in this same category, each of which addresses a different subset of the overall FPGA implementation flow.  
+The tools most similar to the Maverick flow are described in this section.
+
+Several tools have been introduced which allow for the manipulation of Xilinx designs in various ways.
+Torc \cite{Steiner:2011}, RapidSmith \cite{Lavin:2011}, RapidSmith2 \cite{Haroldsen:2015}, and RapidWright \cite{Lavin:2018} all fit into this category---their principal use has been to enable users to perform CAD tasks for Xilinx FPGAs that are not readily possible using vendor tools \cite{Petelin:2016} \cite{Cannon:2018}.
+Additionally, the VTR-to-Bitstream \cite{Hung:2015} project demonstrated  a 3rd party flow which implemented several steps of the flow for Xilinx devices.
+All of these tools must return their designs to the Xilinx flow for the bitstream generation step.
+
+In contrast, a number of other projects have been created that can generate bitstreams for commercial FPGAs.
+The work in \cite{Steiner:2008} describes a proof-of-concept autonomous computing system running on the PowerPC of an embedded Virtex-II Pro device.
+This system could place, route, and generate partial bitstreams for technology mapped (tech-mapped) designs. 
+For bitstream generation, it used an unreleased version of Xilinx's JBits.
+
+Another toolchain, the IceStorm flow \cite{IceStorm}, is a full FPGA CAD flow for the commercially available iCE40 family of FPGAs from Lattice Semiconductor.
+It uses Yosys \cite{Wolf:2013} for synthesis, Arachne-pnr \cite{Arachne-pnr} for placement and routing, and the Project IceStorm tools for bitstream generation.
+This flow has enabled Trenz Electronic's icoBoard \cite{icoBoard}, a Raspberry Pi accessory containing an iCE40 FPGA.
+Using the icoBoard and a Raspberry Pi board, the IceStorm flow can compile designs to bitstreams on the Raspberry Pi's ARM CPU.
+These bitstreams can then be programmed onto the iCE40 FPGA.
+
+We believe that the Maverick work is interesting and novel because it combines the following characteristics.
+First, it is a new PR flow which provides a new model for system development by enabling the independent creation of multiple RM designs once a static design has been created.
+Furthermore, it is a lightweight CAD flow and can thus run on a single-chip embedded system in minimal memory (our demonstrations show it running in under 250 MB of RAM).
+Also, being based on the RapidSmith/RapidSmith2 tool framework, it already supports Xilinx 7-Series devices and is readily extensible to future Xilinx devices such as UltraScale and UltraScale+.

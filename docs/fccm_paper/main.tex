@@ -1,0 +1,83 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+\usepackage{booktabs} % For formal tables
+\usepackage{graphicx}
+%\usepackage[position=b]{subcaption}
+\usepackage[hyphens,spaces,obeyspaces]{url}
+%\usepackage{multicol,tabularx,capt-of}
+\usepackage{multicol}
+\usepackage{multirow}
+
+%\usepackage{hyperref}
+
+% Make it ok to have lines that don't span the whole text width in the bibliography.
+%\usepackage{etoolbox}
+%\apptocmd{\thebibliography}{\raggedright}{}{}
+
+%\usepackage{breakurl}
+% correct bad hyphenation here
+%\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+
+
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{Maverick: A Stand-alone CAD Flow for Partially Reconfigurable FPGA Modules}
+% Does IEEE have a special format they want me to use for funding? (ACM had strict requirements))
+
+
+% author names and affiliations
+% use a multiple column layout for up to two different
+% affiliations
+
+
+\author{\IEEEauthorblockN{Dallon Glick, Jesse Grigg, Brent Nelson, Michael Wirthlin}
+	\IEEEauthorblockA{
+		{NSF Center for Space, High-Performance, and Resilient Computing (SHREC)} \\
+		{Department of Electrical and Computer Engineering} \\
+		{Brigham Young University}\\
+		Provo, UT, 84602, USA \\
+		\{dallon.glick, grigg.jesse, brent\_nelson, wirthlin\}@byu.edu}
+	\thanks{This work was supported in part by the I/UCRC Program of the National Science Foundation within the NSF center for Space, High-performance, and Resilient Computing (SHREC) under Grant No.~1738550.}
+}
+
+% \author{\IEEEauthorblockN{Anonymous Author(s)}
+% }
+
+% make the title area
+\maketitle
+
+\input{sections/abstract.tex}
+
+\begin{IEEEkeywords}
+	Field-programmable gate arrays; Partial reconfiguration; Electronic design automation and methodology; RapidSmith
+\end{IEEEkeywords}
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+\input{sections/introduction.tex}
+\input{sections/background.tex}
+\input{sections/static_system.tex}
+\input{sections/maverick_flow.tex}
+\input{sections/results.tex}
+\input{sections/conclusion.tex}
+
+% references section
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,references}
+
+\end{document}
